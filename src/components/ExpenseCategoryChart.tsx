@@ -36,20 +36,20 @@ export const ExpenseCategoryChart: React.FC = () => {
   };
 
   return (
-    <Card className="finance-card mb-6 hover-lift">
-      <CardHeader className="pb-2">
+    <Card className="rounded-3xl shadow-md border-none bg-white hover:shadow-lg transition-shadow duration-300">
+      <CardHeader className="pb-0">
         <div className="flex items-center justify-between">
           <CardTitle className="text-lg font-semibold flex items-center">
             <PieChartIcon className="h-5 w-5 mr-2 text-finance-primary" />
             Gastos por Categoria
           </CardTitle>
-          <span className="text-sm text-muted-foreground">
-            Total: R$ {total.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+          <span className="text-sm text-muted-foreground bg-finance-light rounded-full px-3 py-1">
+            R$ {total.toLocaleString('pt-BR')}
           </span>
         </div>
       </CardHeader>
       <CardContent>
-        <div className="h-[250px] w-full">
+        <div className="h-[280px] w-full">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie
@@ -58,15 +58,16 @@ export const ExpenseCategoryChart: React.FC = () => {
                 cy="50%"
                 labelLine={false}
                 label={renderCustomizedLabel}
-                outerRadius={80}
-                innerRadius={40}
+                outerRadius={90}
+                innerRadius={45}
                 fill="#8884d8"
                 dataKey="value"
                 animationDuration={800}
                 animationEasing="ease-in-out"
+                paddingAngle={2}
               >
                 {data.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={entry.color} />
+                  <Cell key={`cell-${index}`} fill={entry.color} stroke="white" strokeWidth={2} />
                 ))}
               </Pie>
               <Legend 
@@ -80,11 +81,19 @@ export const ExpenseCategoryChart: React.FC = () => {
                     </span>
                   );
                 }}
+                iconType="circle"
+                iconSize={10}
               />
               <Tooltip 
                 formatter={(value: number) => `R$ ${value.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`}
                 separator=": "
-                labelClassName="text-xs"
+                contentStyle={{
+                  backgroundColor: 'white',
+                  borderRadius: '12px',
+                  boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)',
+                  border: 'none',
+                  padding: '10px'
+                }}
               />
             </PieChart>
           </ResponsiveContainer>

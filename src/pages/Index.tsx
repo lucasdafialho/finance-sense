@@ -9,7 +9,7 @@ import { SuggestionsButton } from '@/components/SuggestionsButton';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background px-4 py-6 sm:px-6 md:py-8">
+    <div className="min-h-screen bg-gradient-to-b from-finance-light to-white px-4 py-6 sm:px-6 md:py-8">
       <div className="max-w-3xl mx-auto">
         {/* Cabeçalho */}
         <Header />
