@@ -4,8 +4,12 @@ import { userData } from '@/data/mockData';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Bell, Sun, Moon, Calendar } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { ThemeToggle } from '@/components/ThemeToggle';
+import { useToast } from '@/hooks/use-toast';
 
 export const Header: React.FC = () => {
+  const { toast } = useToast();
+  
   const greeting = () => {
     const hour = new Date().getHours();
     if (hour < 12) return 'Bom dia';
@@ -18,10 +22,18 @@ export const Header: React.FC = () => {
     month: 'long',
     year: 'numeric'
   });
+  
+  const handleNotificationClick = () => {
+    toast({
+      title: "Notificações",
+      description: "Você não tem novas notificações no momento.",
+      duration: 3000,
+    });
+  };
 
   return (
     <header className="mb-8">
-      <div className="flex justify-between items-center p-4 bg-white rounded-3xl shadow-sm mb-4">
+      <div className="flex justify-between items-center p-4 bg-white rounded-3xl shadow-sm mb-4 dark:bg-finance-text/10 dark:border dark:border-white/10">
         <div className="flex flex-col">
           <div className="flex items-center">
             {new Date().getHours() < 18 ? (
@@ -37,7 +49,7 @@ export const Header: React.FC = () => {
             initial={{ opacity: 0, y: 5 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-2xl md:text-3xl font-bold text-finance-text"
+            className="text-2xl md:text-3xl font-bold text-finance-text dark:text-white"
           >
             {userData.name}
           </motion.h1>
@@ -48,18 +60,28 @@ export const Header: React.FC = () => {
         </div>
         
         <div className="flex items-center space-x-4">
+          <ThemeToggle />
+          
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="relative p-2 rounded-full bg-white shadow-md hover:bg-finance-light transition-colors"
+            className="relative p-2 rounded-full bg-white shadow-md hover:bg-finance-light transition-colors dark:bg-finance-text/20 dark:hover:bg-finance-text/30"
+            onClick={handleNotificationClick}
           >
-            <Bell className="h-5 w-5 text-finance-accent" />
+            <Bell className="h-5 w-5 text-finance-accent dark:text-finance-primary" />
             <span className="absolute top-1 right-1 h-2 w-2 bg-finance-primary rounded-full animate-pulse"></span>
           </motion.button>
           
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="flex items-center"
+            className="flex items-center cursor-pointer"
+            onClick={() => {
+              toast({
+                title: "Perfil",
+                description: "Funcionalidade de perfil será implementada em breve.",
+                duration: 3000,
+              });
+            }}
           >
             <Avatar className="h-12 w-12 border-2 border-finance-primary shadow-md">
               <AvatarImage src={userData.photo} alt={userData.name} className="object-cover" />
