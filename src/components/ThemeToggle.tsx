@@ -15,10 +15,10 @@ export const ThemeToggle: React.FC = () => {
   return (
     <motion.div whileTap={{ scale: 0.95 }}>
       <Button 
-        variant="ghost" 
+        variant="outline" 
         size="icon" 
         onClick={toggleTheme}
-        className="rounded-full hover:bg-muted"
+        className="rounded-full border-transparent hover:border-primary/30 hover:bg-muted"
         title={theme === 'light' ? 'Modo noturno' : 'Modo claro'}
       >
         {theme === 'light' ? (
@@ -26,6 +26,7 @@ export const ThemeToggle: React.FC = () => {
         ) : (
           <Sun className="h-5 w-5 text-finance-warning" />
         )}
+        <span className="sr-only">{theme === 'light' ? 'Modo noturno' : 'Modo claro'}</span>
       </Button>
     </motion.div>
   );

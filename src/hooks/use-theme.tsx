@@ -11,31 +11,40 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>(() => {
-    // Verificar preferência salva ou usar preferência do sistema
+  // Use state with null initial value for SSR compatibility
+  const [theme, setTheme] = useState<Theme | null>(null);
+  
+  useEffect(() => {
+    // Run this only on client side
     const savedTheme = localStorage.getItem('finance-theme') as Theme;
-    if (savedTheme) return savedTheme;
-    
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    return prefersDark ? 'dark' : 'light';
-  });
+    
+    setTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
+  }, []);
 
   useEffect(() => {
-    // Aplicar tema ao documento
-    const root = window.document.documentElement;
-    
-    if (theme === 'dark') {
-      root.classList.add('dark');
-    } else {
-      root.classList.remove('dark');
+    // Only apply theme changes when theme is actually set
+    if (theme) {
+      const root = window.document.documentElement;
+      
+      // Apply theme class to root element
+      if (theme === 'dark') {
+        root.classList.add('dark');
+      } else {
+        root.classList.remove('dark');
+      }
+      
+      // Save user preference
+      localStorage.setItem('finance-theme', theme);
     }
-    
-    // Salvar preferência
-    localStorage.setItem('finance-theme', theme);
   }, [theme]);
 
+  // Only render children when theme is determined to avoid flash
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
+    <ThemeContext.Provider value={{ 
+      theme: theme || 'light', 
+      setTheme: (newTheme) => setTheme(newTheme)
+    }}>
       {children}
     </ThemeContext.Provider>
   );

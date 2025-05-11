@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap');
 
 @tailwind base;
@@ -48,23 +47,23 @@
   }
 
   .dark {
-    --background: 155 15% 10%;
+    --background: 210 30% 8%;
     --foreground: 150 10% 95%;
 
-    --card: 155 15% 13%;
+    --card: 210 30% 12%;
     --card-foreground: 150 10% 95%;
 
-    --popover: 155 15% 13%;
+    --popover: 210 30% 12%;
     --popover-foreground: 150 10% 95%;
 
     --primary: 155 40% 63%;
-    --primary-foreground: 155 15% 10%;
+    --primary-foreground: 210 30% 10%;
 
     --secondary: 155 20% 35%;
     --secondary-foreground: 150 10% 95%;
 
-    --muted: 155 20% 25%;
-    --muted-foreground: 155 10% 70%;
+    --muted: 210 30% 18%;
+    --muted-foreground: 150 10% 75%;
 
     --accent: 170 25% 43%;
     --accent-foreground: 150 10% 95%;
@@ -72,17 +71,17 @@
     --destructive: 0 62% 50%;
     --destructive-foreground: 150 10% 95%;
 
-    --border: 155 20% 25%;
-    --input: 155 20% 25%;
+    --border: 210 30% 20%;
+    --input: 210 30% 20%;
     --ring: 155 40% 63%;
 
-    --sidebar-background: 155 15% 13%;
+    --sidebar-background: 210 30% 12%;
     --sidebar-foreground: 150 10% 95%;
     --sidebar-primary: 155 40% 63%;
-    --sidebar-primary-foreground: 155 15% 10%;
-    --sidebar-accent: 155 20% 25%;
+    --sidebar-primary-foreground: 210 30% 10%;
+    --sidebar-accent: 210 30% 18%;
     --sidebar-accent-foreground: 150 10% 95%;
-    --sidebar-border: 155 20% 25%;
+    --sidebar-border: 210 30% 20%;
     --sidebar-ring: 155 40% 63%;
   }
 }
@@ -103,16 +102,16 @@
 
   /* Classes personalizadas para componentes */
   .finance-card {
-    @apply rounded-2xl bg-white shadow-lg transition-all duration-300 hover:shadow-xl p-6 border-none dark:bg-finance-text/10 dark:border dark:border-white/10;
+    @apply rounded-2xl bg-white shadow-lg transition-all duration-300 hover:shadow-xl p-6 border-none dark:bg-card dark:border dark:border-border;
   }
   
   .finance-input {
-    @apply rounded-xl border-0 shadow-sm bg-white px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-ring dark:bg-finance-text/20 dark:text-white;
+    @apply rounded-xl border-0 shadow-sm bg-white px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-ring dark:bg-muted dark:text-foreground;
   }
   
   /* Glassmorphism */
   .glass {
-    @apply bg-white/80 backdrop-blur-md border border-white/20 rounded-2xl dark:bg-finance-text/50 dark:backdrop-blur-md dark:border-white/10;
+    @apply bg-white/80 backdrop-blur-md border border-white/20 rounded-2xl dark:bg-card/80 dark:backdrop-blur-md dark:border-white/5;
   }
 }
 
