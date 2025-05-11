@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,12 +62,28 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Cores personalizadas para FinanceSense
+				finance: {
+					primary: '#77C9A4',     // Verde pastel médio
+					secondary: '#A1EBD0',   // Verde pastel claro
+					accent: '#548687',      // Verde azulado
+					light: '#E7F5EF',       // Verde muito claro/quase branco
+					text: '#2C3E50',        // Texto escuro azulado
+					danger: '#E57373',      // Vermelho suave para gastos
+					success: '#81C784',     // Verde suave para receitas
+					warning: '#FFD54F',     // Amarelo suave para alertas
+					purple: '#B39DDB',      // Lilás pastel
+					blue: '#90CAF9',        // Azul pastel
 				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				sm: 'calc(var(--radius) - 4px)',
+				xl: '1rem',
+				'2xl': '1.5rem',
+				'3xl': '2rem',
 			},
 			keyframes: {
 				'accordion-down': {
@@ -84,11 +101,29 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
+					}
+				},
+				'pulse-light': {
+					'0%, 100%': {
+						opacity: '1'
+					},
+					'50%': {
+						opacity: '0.8'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float': 'float 3s ease-in-out infinite',
+				'pulse-light': 'pulse-light 2s ease-in-out infinite'
 			}
 		}
 	},
