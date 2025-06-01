@@ -1,73 +1,92 @@
-# Welcome to your Lovable project
+# FinanceSense - Inteligência Financeira
 
-## Project info
+## Sobre o Projeto
 
-**URL**: https://lovable.dev/projects/de458e4e-1cca-441b-8584-266e299d8918
+FinanceSense é um aplicativo de gestão financeira pessoal que utiliza inteligência artificial para ajudar você a controlar suas finanças de forma inteligente e intuitiva.
 
-## How can I edit this code?
+### Principais Funcionalidades
 
-There are several ways of editing your application.
+- Dashboard Inteligente: Visualize suas finanças em tempo real
+- Assistente IA: Chat inteligente para análise e sugestões personalizadas
+- Metas Financeiras: Defina e acompanhe seus objetivos
+- Sugestões de Economia: Dicas personalizadas baseadas em seus hábitos
+- Análise com IA: Insights profundos sobre seus padrões de gastos
+- Modo Escuro: Interface adaptável para conforto visual
 
-**Use Lovable**
+## Tecnologias Utilizadas
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/de458e4e-1cca-441b-8584-266e299d8918) and start prompting.
+- **React** + **TypeScript**: Base do desenvolvimento
+- **Vite**: Build tool rápida e moderna
+- **Tailwind CSS**: Estilização responsiva
+- **Shadcn/ui**: Componentes de interface
+- **Framer Motion**: Animações suaves
+- **Recharts**: Visualização de dados
 
-Changes made via Lovable will be committed automatically to this repo.
+## Instalação e Execução
 
-**Use your preferred IDE**
+### Pré-requisitos
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Node.js 18+ 
+- npm ou yarn
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Passos para instalação
 
-Follow these steps:
+```bash
+# Clone o repositório
+git clone https://github.com/seu-usuario/finance-sense.git
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Entre no diretório
+cd sense-finance-buddy
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Instale as dependências
+npm install
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Execute o projeto
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+O aplicativo estará disponível em `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Scripts Disponíveis
 
-**Use GitHub Codespaces**
+- `npm run dev` - Inicia o servidor de desenvolvimento
+- `npm run build` - Cria a versão de produção
+- `npm run preview` - Visualiza a versão de produção
+- `npm run lint` - Executa o linter
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Estrutura do Projeto
 
-## What technologies are used for this project?
+```
+sense-finance-buddy/
+├── src/
+│   ├── components/     # Componentes React
+│   ├── pages/         # Páginas da aplicação
+│   ├── hooks/         # Custom hooks
+│   ├── services/      # Serviços e APIs
+│   ├── data/          # Dados mock e constantes
+│   └── lib/           # Utilitários
+├── public/            # Arquivos públicos
+└── ...
+```
 
-This project is built with:
+## Contribuindo
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Contribuições são sempre bem-vindas! Para contribuir:
 
-## How can I deploy this project?
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/MinhaFeature`)
+3. Commit suas mudanças (`git commit -m 'Adiciona MinhaFeature'`)
+4. Push para a branch (`git push origin feature/MinhaFeature`)
+5. Abra um Pull Request
 
-Simply open [Lovable](https://lovable.dev/projects/de458e4e-1cca-441b-8584-266e299d8918) and click on Share -> Publish.
+## Licença
 
-## Can I connect a custom domain to my Lovable project?
+Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
 
-Yes, you can!
+## Contato
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Para dúvidas ou sugestões, entre em contato através de [seu-email@exemplo.com]
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+---
+
+Desenvolvido com dedicação pela equipe FinanceSense

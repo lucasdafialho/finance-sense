@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Moon, Sun } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -9,7 +8,10 @@ export const ThemeToggle: React.FC = () => {
   const { theme, setTheme } = useTheme();
   
   const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    // Add small delay to ensure smooth transition
+    document.documentElement.style.colorScheme = newTheme;
+    setTheme(newTheme);
   };
 
   return (
@@ -22,9 +24,9 @@ export const ThemeToggle: React.FC = () => {
         title={theme === 'light' ? 'Modo noturno' : 'Modo claro'}
       >
         {theme === 'light' ? (
-          <Moon className="h-5 w-5 text-finance-accent" />
+          <Moon className="h-5 w-5 text-finance-accent dark:text-primary" />
         ) : (
-          <Sun className="h-5 w-5 text-finance-warning" />
+          <Sun className="h-5 w-5 text-finance-warning dark:text-finance-warning" />
         )}
         <span className="sr-only">{theme === 'light' ? 'Modo noturno' : 'Modo claro'}</span>
       </Button>

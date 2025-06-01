@@ -56,7 +56,7 @@ export const savingSuggestions = [
 
 // Dados do usuário
 export const userData = {
-  name: "Luciana",
+  name: "Lucas",
   photo: "/placeholder.svg",
   lastLogin: "11 Mai, 08:30"
 };

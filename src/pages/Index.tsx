@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Header } from '@/components/Header';
 import { FinancialSummaryCard } from '@/components/FinancialSummaryCard';
@@ -14,14 +13,14 @@ import { ChatAssistant } from '@/components/ChatAssistant';
 import { SimulatorCard } from '@/components/SimulatorCard';
 import { FeedbackMessage } from '@/components/FeedbackMessage';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Brain } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Index = () => {
   const [showFeedback, setShowFeedback] = useState(true);
   
   return (
-    <div className="min-h-screen bg-gradient-to-b from-finance-light to-white px-4 py-6 sm:px-6 md:py-8 dark:from-finance-text dark:to-finance-text/95">
+    <div className="min-h-screen bg-gradient-to-b from-finance-light to-white px-4 py-6 sm:px-6 md:py-8 dark:from-background dark:to-background">
       <div className="max-w-4xl mx-auto">
         {/* Cabeçalho */}
         <Header />
@@ -41,18 +40,18 @@ const Index = () => {
         {/* Alertas Inteligentes */}
         <AlertsCard />
         
+        {/* Entrada para registro de despesas */}
+        <ExpenseInput />
+        
         {/* Tabs para organizar o conteúdo */}
         <Tabs defaultValue="overview" className="my-6">
-          <TabsList className="grid grid-cols-3 mb-6 p-1 rounded-xl bg-white shadow-sm dark:bg-finance-text/20">
+          <TabsList className="grid grid-cols-3 mb-6 p-1 rounded-xl bg-white shadow-sm dark:bg-muted">
             <TabsTrigger value="overview" className="rounded-lg text-sm">Visão Geral</TabsTrigger>
             <TabsTrigger value="goals" className="rounded-lg text-sm">Objetivos</TabsTrigger>
             <TabsTrigger value="tips" className="rounded-lg text-sm">Economia</TabsTrigger>
           </TabsList>
           
           <TabsContent value="overview" className="space-y-6 animate-fade-in">
-            {/* Entrada para registro de despesas */}
-            <ExpenseInput />
-            
             {/* Gráficos */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <ExpenseCategoryChart />
@@ -75,8 +74,16 @@ const Index = () => {
           </TabsContent>
         </Tabs>
         
-        {/* Link para mais funcionalidades */}
-        <div className="flex justify-end mb-20">
+        {/* Links para mais funcionalidades */}
+        <div className="flex justify-between items-center mb-20">
+          <Link 
+            to="/analise-ia" 
+            className="inline-flex items-center text-finance-primary hover:text-finance-accent transition-colors text-sm font-medium"
+          >
+            <Brain className="mr-1 h-4 w-4" />
+            Análise com IA
+            <ArrowRight className="ml-1 h-4 w-4" />
+          </Link>
           <Link 
             to="/planejamento" 
             className="inline-flex items-center text-finance-accent hover:text-finance-primary transition-colors text-sm font-medium"

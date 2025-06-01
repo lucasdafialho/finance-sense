@@ -1,0 +1,54 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#77C9A4" />
+      <stop offset="100%" stop-color="#548687" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg-gradient)"/>
+  
+  <!-- Pattern overlay -->
+  <rect width="1200" height="630" fill="white" opacity="0.05"/>
+  
+  <!-- Logo -->
+  <g transform="translate(520, 150)">
+    <circle cx="80" cy="80" r="75" fill="white" opacity="0.2"/>
+    <circle cx="80" cy="80" r="65" fill="white"/>
+    
+    <path d="M80 30 C80 30, 50 40, 50 65 C50 78, 58 84, 80 84 C102 84, 110 90, 110 103 C110 128, 80 138, 80 138" stroke="#77C9A4" stroke-width="10" stroke-linecap="round" fill="none"/>
+    
+    <line x1="80" y1="20" x2="80" y2="40" stroke="#77C9A4" stroke-width="7" stroke-linecap="round"/>
+    <line x1="80" y1="120" x2="80" y2="140" stroke="#77C9A4" stroke-width="7" stroke-linecap="round"/>
+    
+    <path d="M30 120 L45 105 L60 112 L80 85" stroke="#548687" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+  </g>
+  
+  <!-- Title -->
+  <text x="600" y="380" font-family="Arial, sans-serif" font-size="72" font-weight="bold" text-anchor="middle" fill="white">
+    FinanceSense
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="440" font-family="Arial, sans-serif" font-size="32" text-anchor="middle" fill="white" opacity="0.9">
+    Inteligência Financeira com IA
+  </text>
+  
+  <!-- Features -->
+  <g transform="translate(300, 500)">
+    <circle cx="0" cy="0" r="4" fill="white"/>
+    <text x="15" y="6" font-family="Arial, sans-serif" font-size="20" fill="white">Dashboard Inteligente</text>
+  </g>
+  
+  <g transform="translate(500, 500)">
+    <circle cx="0" cy="0" r="4" fill="white"/>
+    <text x="15" y="6" font-family="Arial, sans-serif" font-size="20" fill="white">Análise com IA</text>
+  </g>
+  
+  <g transform="translate(680, 500)">
+    <circle cx="0" cy="0" r="4" fill="white"/>
+    <text x="15" y="6" font-family="Arial, sans-serif" font-size="20" fill="white">Metas Financeiras</text>
+  </g>
+</svg> 

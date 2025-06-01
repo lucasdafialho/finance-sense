@@ -27,12 +27,14 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     if (theme) {
       const root = window.document.documentElement;
       
+      // Remove all theme classes first to ensure clean state
+      root.classList.remove('light', 'dark');
+      
+      // Force reflow to ensure classes are removed
+      void root.offsetHeight;
+      
       // Apply theme class to root element
-      if (theme === 'dark') {
-        root.classList.add('dark');
-      } else {
-        root.classList.remove('dark');
-      }
+      root.classList.add(theme);
       
       // Save user preference
       localStorage.setItem('finance-theme', theme);

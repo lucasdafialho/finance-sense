@@ -1,0 +1,20 @@
+{
+  "name": "FinanceSense - Inteligência Financeira",
+  "short_name": "FinanceSense",
+  "description": "Seu agente financeiro pessoal baseado em IA",
+  "theme_color": "#77C9A4",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["finance", "productivity", "utilities"]
+} 
