@@ -83,10 +83,6 @@ Contribuições são sempre bem-vindas! Para contribuir:
 
 Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
 
-## Contato
-
-Para dúvidas ou sugestões, entre em contato através de [seu-email@exemplo.com]
-
 ---
 
-Desenvolvido com dedicação pela equipe FinanceSense
+
